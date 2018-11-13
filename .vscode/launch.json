@@ -1,0 +1,27 @@
+{
+    // Utilisez IntelliSense pour en savoir plus sur les attributs possibles.
+    // Pointez pour afficher la description des attributs existants.
+    // Pour plus d'informations, visitez : https://go.microsoft.com/fwlink/?linkid=830387
+
+    // NDE : site pour l'exemple https://skryvets.com/blog/2018/07/01/configure-debugger-for-angular-in-vscode/
+    // Il faut d'abord executer npm start dans la console !!!!!!!
+    // autre aide https://code.visualstudio.com/docs/editor/debugging#_launch-configurations
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Chorme",
+        "type": "chrome",
+        "request": "launch",
+        "url": "http://localhost:4200",
+        "webRoot": "${workspaceFolder}"
+      },
+      {
+        "type": "node",
+        "request": "launch",
+        "name": "Launch node Program",
+        "program": "${workspaceFolder}/main.ts",
+        "cwd": "${workspaceFolder}",
+        "args": [ "${env:USERNAME}" ]
+    }
+    ]
+}

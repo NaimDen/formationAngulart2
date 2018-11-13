@@ -1,0 +1,34 @@
+<h1>Questionnaire</h1>
+<form ngForm #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+  <div>
+    <div id='q1' #q1 >
+      15 oiseaux sont perchés sur un arbre, un chasseur tire l'un d'entre eux, combien restent de oiseaux sur l'abre?
+      <input type='number' class="form-control" name="nbOiseau" required [(ngModel)]="qcm.nbOiseau" />
+    </div>
+    <hr/>
+    <div id='q2' #q2 >
+        Que préférez vous entre les deux cours?
+        <p> <input type='radio' class="form-control" name="coursFavoris" required [(ngModel)]="qcm.coursFavoris" checked  value='Angular'/> Angular </p>
+        <p> <input type='radio' class="form-control" name="coursFavoris" required [(ngModel)]="qcm.coursFavoris"  value='Java' /> Java </p>
+    </div>
+    <hr/>
+    <div id='q3' #q3 >
+      <p> Un composant Angular n'a pas besoin d'un decorateur @Component
+        <input type='checkbox' class="form-control" name="decorateur"  [(ngModel)]="qcm.decorateur"  value='A'> Oui
+        <input type='checkbox' class="form-control" name="decorateur"  [(ngModel)]="qcm.decorateur"  value='B' > Non
+      </p>
+    </div>
+
+    <input name="first" ngModel required #first="ngModel" />
+    <input name="last" ngModel />
+  </div>
+  <hr/>
+  <div>
+    <span> <input type="submit" value="Envoyer le formulaire" /> </span> <span style='width: 30px'>  </span>
+    <span> <input type="button" value="clear" (click)='f.reset()'/> </span>
+    </div>
+
+</form>
+
+<div>vous avez saisi : {{ first.value }}</div>
+<div>contenu de f : {{ f.value | json}}</div>

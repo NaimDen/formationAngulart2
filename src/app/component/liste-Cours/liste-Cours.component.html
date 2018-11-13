@@ -1,0 +1,15 @@
+<div>
+  <h2>Veuillez sélectionner un cours</h2>
+</div>
+  <!-- TP N°1 <p>  <li *ngFor="let item of this.listeCours; let i = index">
+      <img src='{{item.vignette}}' class='vignette' />  {{item.title}} <button (click)="selectCours()">Sélectionner</button>
+    <ul class='infos'>{{item.information}} </ul>
+  </li>
+  </p> -->
+  <div *ngFor="let item of this.listeCours; let i = index">
+      <app-cours [title]="item.title" [vignette]="item.vignette" [information]="item.information" [nbVue]="item.nbVue"
+      (eventCours)='selectionCours($event,item)' ></app-cours>
+  </div>
+
+
+
